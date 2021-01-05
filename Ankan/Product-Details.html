@@ -1,0 +1,198 @@
+<?php session_start(); ?>
+<?php
+if(!empty($_SESSION["username"])){
+?>
+
+
+
+
+
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Registration - ZenBD Online Shopping Portal</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+		<!-- bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+		<link href="themes/css/bootstrappage.css" rel="stylesheet" />
+
+		<!-- global styles -->
+		<link href="themes/css/flexslider.css" rel="stylesheet" />
+		<link href="themes/css/main.css" rel="stylesheet" />
+
+		<!-- scripts -->
+		<script src="themes/js/jquery-1.7.2.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="themes/js/superfish.js"></script>
+		<script src="themes/js/jquery.scrolltotop.js"></script>
+		
+	</head>
+	<body>
+		<div id="top-bar" class="container">
+			<div class="row">
+				<div class="span2">
+					<img src="zenbd.png" style="position:relative; max-width:90px"/>
+				</div>
+				
+				<div class="span6">
+					<div class="account pull-right">
+						<ul class="user-menu">
+							<li><a href="#">My Account</a></li>
+							<li><a href="#">Cart</a></li>
+							
+							<li><a href="Login.php">Login</a></li>
+							<li><a href="Logout.php">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="wrapper" class="container">
+			<section class="navbar main-menu">
+				<div class="navbar-inner main-menu">
+					
+					<nav id="menu" class="pull-right">
+						<ul>
+							<li>
+								<a href="#">Smartphone</a>
+							</li>
+							<li><a href="#">Laptop</a></li>
+							<li>
+								<a href="#">Accessories</a>
+							</li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+		</div>
+		
+		<section class="header_text sub">
+			<h4><span>Welcome</span></h4>
+		</section>
+		<section class="main-content" style="padding-left:100px">
+			<h1>Welcome <?php echo $_SESSION["username"]; ?>, to Our Shopping Portal</h1>
+		</section>
+	<div id="top-bar" class="container">
+		<section class="main-content">
+		    <div class="row">
+		        <div class="span12">
+		            
+		            
+		            <div class="row">
+		                <div class="span12">
+		                    <h4 class="title">
+		                        <span class="pull-left"><span class="text"><span class="line">Latest <strong>Products</strong></span></span></span>
+		                        <span class="pull-right">
+		                            <a class="left button" href="#myCarousel-2" data-slide="prev"></a><a class="right button" href="#myCarousel-2" data-slide="next"></a>
+		                        </span>
+		                    </h4>
+
+		                    <div id="myCarousel-2" class="myCarousel carousel slide">
+		                        <div class="carousel-inner">
+		                            <div class="active item">
+		                                <ul class="thumbnails">
+		                                    
+
+		                                	<?php 
+		                                			include "Connection.php";
+	
+	
+		
+			
+													$query = oci_parse($conn, "SELECT * FROM SS.PRODUCTS");
+													oci_execute($query);
+														
+													//$row=oci_fetch_all($query,$result);
+
+													//var_dump($result);
+
+													
+													while ($row = oci_fetch_array($query, OCI_RETURN_NULLS+OCI_ASSOC)) {
+													   ?>
+													   		<li class="span3">
+						                                    <div class="product-box">
+						                                        <span class="sale_tag"></span>
+
+						                                        <p><a href='product-details.php/?id=<?php echo $row["PRODUCTID"];?>'><img src="<?php echo $row["IMAGE"];?>" alt="IMAGE" /></a></p>
+						                                        <a href='product-details.php/?id=<?php echo $row["PRODUCTID"];?>' class="title"><?php echo $row["PRODUCTNAME"];?></a><br />
+						                                        <a href='product-details.php/?id=<?php echo $row["PRODUCTID"];?>' class="category"><?php echo $row["CATEGORYID"];?></a>
+						                                         <p class="price"><?php echo $row["PRICE"];?></p>
+
+
+						                                        <a href='cart.php/?id=<?php echo $row["PRODUCTID"];?>'><button class="btn btn-inverse" type="submit">Add to cart</button></a>
+
+													   <?php
+													   //foreach ($row as $item) {
+													       //print '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+													   //}
+													   ?>
+													   		 </div>
+						                                        </li>
+													   <?php
+													}
+													
+													
+													
+												
+													
+
+												
+		                                	?>
+
+
+		                                    
+
+
+		                                    
+		                                </ul>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            
+		        </div>
+		    </div>
+		</section>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<section id="copyright">
+				<span>Copyright &copy;2020 bootstrappage template  All right reserved.</span>
+		</section>
+
+
+		<script src="themes/js/common.js"></script>
+		<script src="themes/js/jquery.flexslider-min.js"></script>
+		
+	</body>
+	</html>
+

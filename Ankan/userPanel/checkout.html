@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Registration - ZenBD Online Shopping Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+    <!-- bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <link href="../themes/css/bootstrappage.css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link href="../themes/css/flexslider.css" rel="stylesheet" />
+    <link href="../themes/css/main.css" rel="stylesheet" />
+
+    <!-- scripts -->
+    <script src="../themes/js/jquery-1.7.2.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../themes/js/superfish.js"></script>
+    <script src="../themes/js/jquery.scrolltotop.js"></script>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="top-bar" class="container">
+        <div class="row">
+            <div class="span2">
+                <img src="../zenbd.png" style="position:relative; max-width:90px"/>
+            </div>
+            
+            <div class="span6">
+                <div class="account pull-right">
+                    <ul class="user-menu">
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Cart</a></li>
+                        
+                        <li><a href="../Logout.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper" class="container">
+        <section class="navbar main-menu">
+            <div class="navbar-inner main-menu">
+                
+                <nav id="menu" class="pull-right">
+                    <ul>
+                        <li>
+                            <a href="#">Smartphone</a>
+                        </li>
+                        <li><a href="#">Laptop</a></li>
+                        <li>
+                            <a href="#">Accessories</a>
+                        </li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+	<section class="header_text sub">
+		
+		
+	</section>
+	<section class="main-content" style="padding-left:300px">
+		<div class="row">
+			<div class="span5">
+				<div style="color:red; font-size:15px;"></div>
+				
+				
+				
+					<input type="hidden" name="next" value="/">
+					
+						
+
+                    
+                        
+                    <!-- @using ZenBD.Models
+                    @{
+                        ViewBag.Title = "Cart";
+                        Layout = "~/Views/Shared/_Layout.cshtml";
+                    
+                        var sum = 0.0;
+                    
+                    } -->
+                    
+                    <section class="header_text sub">
+                        <!-- <img class="pageBanner" src="themes/images/pageBanner.png" alt="New products"> -->
+                        <h4><span>Shopping Cart</span></h4>
+                    </section>
+                    <section class="main-content">
+                        <div class="row">
+                            <div class="span9">
+                                <h4 class="title"><span class="text"><strong>Your</strong> Cart</span></h4>
+                                <table class="table table-striped text-right" id="id">
+                                    <thead>
+                                        <tr>
+                                            <th>Remove</th>
+                                            
+                                            <th>Product Name</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                            <th>Total</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- @foreach (InvoiceItem item in (List<InvoiceItem>)Session["cart"])
+                                        {
+                                        <tr>
+                                            <td><a href="@Url.Action("Remove", "Cart", new { ProductId = item.Product.ProductId })">Remove</a></td>
+                                            <td><img src="@Url.Content(item.Product.Image)" width="100" /> </td>
+                                            <td>@item.Product.ProductName</td>
+                                            <td>@item.Quantity</td>
+                                            <td>@item.Product.Price</td>
+                                            <td> @(item.Product.Price * item.Quantity )</td>
+                                            @{sum = sum + item.Product.Price * item.Quantity;}
+                    
+                                        </tr>
+                                                } -->
+                                                <p>aaa</p>
+                                    </tbody>
+
+                                </table>
+                    <p id="ids">
+                        
+                    </p>
+                                <hr>
+                                <p class="cart-total right">
+                    
+                                    <!-- @{
+                                        var tax = 0.15;
+                                        List<InvoiceItem> cart = (List<InvoiceItem>)Session["cart"];
+                                        var total = sum;
+                                        var taxamount = tax * total;
+                                        var subtotal = total + taxamount;
+                                        Session["subtotal"] = sum;
+                                        Session["tax"] = taxamount;
+                                        Session["total"] = subtotal;
+                                    } -->
+                    
+                                    <!-- <br>
+                                    <strong>Sub-Total</strong>:@sum<br/>
+                                    <strong>VAT (15%)</strong>:$@taxamount<br>
+                                    <strong>Total</strong>: $@subtotal<br> -->
+
+
+
+                                    <br>
+                                    <strong>Sub-Total</strong><br/>
+                                    <strong>VAT (15%)</strong><br>
+                                    <strong>Total</strong><br>
+                    
+                                   
+                    
+                                </p>
+                                <hr />
+                                <p class="buttons center">
+                                    <button class="btn" type="button">Delete</button>
+                                    <button class="btn" type="button">Update</button>
+                                    <!-- <button class="btn btn-inverse" type="submit" id="checkout">@Html.ActionLink("Checkout", "Index", "Checkout")</button> -->
+                                    <button class="btn btn-inverse" type="submit" id="checkout">Checkout</button>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    
+                        
+                        
+
+
+
+                        
+				
+			</div>
+        </div>
+        <p id="err" style="color:red"></p>
+	</section>
+	<br/>
+	<br/>
+	<br/>
+	<section id="copyright">
+            <span>Copyright &copy;2020 bootstrappage template  All right reserved.</span>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+	<script src="themes/js/common.js"></script>
+    <script src="themes/js/jquery.flexslider-min.js"></script>
+    <script src="checkout.js"></script>
+    
+</body>
+</html>
+
+
